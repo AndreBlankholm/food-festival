@@ -1,4 +1,4 @@
-require("bootstrap");
+require("bootstrap"); // Because Bootstrap doesn't have any special variables that webpack doesn't understand, the only thing we need to do is require the package at the top of the script.js file. Add the following code at the top of that file:
 
 
 $(document).ready(function() {
