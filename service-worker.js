@@ -27,7 +27,9 @@ const FILES_TO_CACHE = [
 
 self.addEventListener('install', function (e) {
     e.waitUntil(                                         // ewait make sure the service worker doesn't move on from the installing phase until it fininshes all of it's code
-      caches.open(CACHE_NAME).then(function (cache) {  // caches.open to find a specific name/ then add every file in that array to the cache
+      caches
+      .open(CACHE_NAME)
+      .then(function (cache) {  // caches.open to find a specific name/ then add every file in that array to the cache
         console.log('installing cache : ' + CACHE_NAME)
         return cache.addAll(FILES_TO_CACHE)
       })
